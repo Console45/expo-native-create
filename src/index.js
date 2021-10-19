@@ -1,18 +1,18 @@
 #!/usr/bin/env node
-import path from "path";
-import fs from "fs-extra";
-import childProcess from "child_process";
-import { Command } from "commander";
-import chalk from "chalk";
-import simpleGit, { SimpleGit } from "simple-git";
-import inquirer from "inquirer";
-import packageJson from "../package.json";
-import Listr from "listr";
+const path = require("path");
+const fs = require("fs-extra");
+const childProcess = require("child_process");
+const { Command } = require("commander");
+const chalk = require("chalk");
+const simpleGit = require("simple-git");
+const inquirer = require("inquirer");
+const packageJson = require("../package.json");
+const Listr = require("listr");
 
-let projectName: string = "";
-let template: string = "";
+let projectName;
+let template;
 
-const program = new Command(packageJson.name)
+new Command(packageJson.name)
   .version(packageJson.version)
   .description(chalk.bold.blue(packageJson.description))
   .usage(chalk.green("[project-name]"))
@@ -62,7 +62,7 @@ inquirer
       }
     }
 
-    const packageManager: string = hasYarn() ? "yarn" : "npm";
+    const packageManager = hasYarn() ? "yarn" : "npm";
 
     const tasks = new Listr([
       {
@@ -84,7 +84,7 @@ inquirer
       {
         title: "Initialize git in directory",
         task: async () => {
-          const git: SimpleGit = simpleGit({
+          const git = simpleGit({
             baseDir: projectDestination,
             binary: "git",
           });
@@ -95,7 +95,7 @@ inquirer
       },
     ]);
     await tasks.run();
-    const printScript = (script: string): string => {
+    const printScript = (script) => {
       return chalk.cyan`${packageManager} ${script}`;
     };
     console.log(
