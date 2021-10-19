@@ -1,6 +1,6 @@
 {
   "name": "expo-native-create",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "cli tool to create an expo react-native project with my boilerplate",
   "main": "./lib/src/index.js",
   "repository": "https://github.com/Console45/expo-native-create.git",
