@@ -14,9 +14,7 @@
     "src/index.js"
   ],
   "scripts": {
-    "start": "node ./src/index.js",
-    "prepublishOnly": "cp -R ./templates .",
-    "postpublish": "rm -rf ./templates"
+    "start": "node ./src/index.js"
   },
   "dependencies": {
     "chalk": "^4.1.2",
