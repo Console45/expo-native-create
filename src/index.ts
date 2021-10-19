@@ -71,15 +71,6 @@ inquirer
             path.join(__dirname, "../templates", template),
             projectName
           );
-          const json = fs.readFileSync(`${projectDestination}/package.json`, {
-            encoding: "utf8",
-          });
-          const jsonObject = JSON.parse(json);
-          jsonObject["name"] = projectName;
-          fs.writeFileSync(
-            `${projectDestination}/package.json`,
-            JSON.stringify(jsonObject, null, 4)
-          );
         },
       },
     ]);
