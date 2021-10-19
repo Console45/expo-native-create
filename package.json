@@ -2,12 +2,12 @@
   "name": "expo-native-create",
   "version": "0.1.0",
   "description": "cli tool to create an expo react-native project with my boilerplate",
-  "main": "./lib/index.js",
+  "main": "./lib/src/index.js",
   "repository": "https://github.com/Console45/expo-native-create.git",
   "author": "Cosmos Appiah <cosmosappiah029@gmail.com>",
   "license": "MIT",
   "bin": {
-    "create-tsex-api": "./lib/index.js"
+    "expo-native-create": "./lib/src/index.js"
   },
   "scripts": {
     "build": "rm -rf ./lib && tsc",
