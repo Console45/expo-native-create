@@ -68,10 +68,12 @@ inquirer
       {
         title: `Install packages with ${template} template`,
         task: async () => {
+          bar.start(300, 0);
           await fs.copy(
             path.join(__dirname, "../templates", template),
             projectName
           );
+          bar.update(300);
         },
       },
       {
@@ -123,4 +125,5 @@ inquirer
     );
     console.log();
     console.log("Happy hacking!");
+    process.exit(0);
   });
