@@ -120,10 +120,6 @@ inquirer
     console.log(` ${printScript("eject")}`);
     console.log(`   Switch from expo to barebones react-native`);
     console.log();
-    console.log(
-      `   Compiles the typescript api into javascript for production`
-    );
-    console.log();
     console.log("Happy hacking!");
     process.exit(0);
   });
