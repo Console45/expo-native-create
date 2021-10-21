@@ -15,18 +15,35 @@
 <br>
 <br>
 
-## Usage
+## Installation
 
-It is always recommended to use 'npx' to make sure you are running the latest version
+Using Yarn
 
 ```bash
-    $ npx expo-native-create
+    $  yarn global expo-native-create
+```
+
+Using Npm
+
+```bash
+    $  npm install expo-native-create --global
+```
+
+<br>
+<br>
+
+## Usage
+
+Simply run
+
+```bash
+    $ expo-native-create
 ```
 
 or
 
 ```bash
-    $ npx expo-native-create [appName]
+    $ expo-native-create [appName]
 ```
 
 <br>
