@@ -53,16 +53,16 @@ inquirer
     if (answers.template) template = answers.template.toLowerCase();
     const projectDestination = path.join(process.cwd(), projectName);
 
-    function hasYarn() {
+    function hasPackage(packageName) {
       try {
-        childProcess.execSync("yarn --version", { stdio: "ignore" });
+        childProcess.execSync(`${packageName} --version`, { stdio: "ignore" });
         return true;
       } catch (e) {
         return false;
       }
     }
 
-    const packageManager = hasYarn() ? "yarn" : "npm";
+    const packageManager = hasPackage("yarn") ? "yarn" : "npm";
 
     const tasks = new Listr([
       {
@@ -80,6 +80,15 @@ inquirer
           process.chdir(projectDestination);
           childProcess.execSync(`${packageManager} install`);
         },
+      },
+      {
+        title: "Install expo",
+        task: () => {
+          packageManager === "yarn"
+            ? childProcess.execSync(`yarn global add expo-cli`)
+            : childProcess.execSync(`npm install expo -g`);
+        },
+        skip: () => hasPackage("expo"),
       },
       {
         title: "Initialize git in directory",
