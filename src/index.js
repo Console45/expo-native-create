@@ -72,7 +72,7 @@ inquirer
             path.join(__dirname, "../templates", template),
             projectName
           );
-          fs.writeFileSync(`${projectName}/.gitignore`, "node_modes/");
+          fs.writeFileSync(`${projectName}/.gitignore`, "node_modules/");
         },
       },
       {
