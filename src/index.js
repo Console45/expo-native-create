@@ -83,13 +83,12 @@ inquirer
         },
       },
       {
-        title: "Install expo",
+        title: "Install updated version of expo-cli",
         task: () => {
           packageManager === "yarn"
-            ? childProcess.execSync(`yarn global add expo-cli`)
-            : childProcess.execSync(`npm install expo -g`);
+            ? childProcess.execSync(`yarn global add expo-cli@latest`)
+            : childProcess.execSync(`npm install expo@latest -g`);
         },
-        skip: () => hasPackage("expo"),
       },
       {
         title: "Initialize git in directory",
