@@ -87,7 +87,7 @@ inquirer
         task: () => {
           packageManager === "yarn"
             ? childProcess.execSync(`yarn global add expo-cli@latest`)
-            : childProcess.execSync(`npm install expo@latest -g`);
+            : childProcess.execSync(`npm install expo-cli@latest -g`);
         },
       },
       {
